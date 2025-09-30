@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renjun Xu - AI Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #24292e;
+            background: #0d1117;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #30363d;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f6feb 0%, #388bfd 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+
+        nav {
+            background: #0d1117;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #30363d;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: #c9d1d9;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: #21262d;
+            color: #58a6ff;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background: #0d1117;
+            padding: 2rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+
+        .section h2 {
+            color: #c9d1d9;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1f6feb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: #58a6ff;
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p, .section li {
+            color: #8b949e;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1f6feb, #388bfd);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #21262d;
+            border-left: 3px solid #1f6feb;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .highlight-box p {
+            color: #c9d1d9;
+        }
+
+        .research-item {
+            background: #21262d;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #58a6ff;
+        }
+
+        .research-title {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-venue {
+            color: #f85149;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-desc {
+            color: #8b949e;
+            margin-top: 0.5rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-category {
+            background: #21262d;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+
+        .tech-category h4 {
+            color: #58a6ff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: #1f6feb;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.2rem;
+            font-size: 0.85rem;
+        }
+
+        .repo-card {
+            background: #21262d;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid #30363d;
+            transition: all 0.3s;
+        }
+
+        .repo-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+
+        .repo-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .repo-name {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .repo-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .code-example {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-example code {
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #0d1117;
+            color: #8b949e;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #30363d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                border-radius: 6px;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-img">🧠</div>
+                <div>
+                    <h1>Dr. Renjun XU</h1>
+                    <div class="tagline">Reliable Foundation Models & Scientific AI</div>
+                    <div class="subtitle" style="font-size: 1rem; opacity: 0.85; margin-top: 0.5rem;">
+                        Zhejiang University, ZJU100 Young Professor & Deputy Director | Former Senior Director, Global Data & AI (VISA)
+                    </div>
+    
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="mailto:renjun at tensense.org" class="social-link">
+                    <span>📧</span>
+                    <span>Contact: renjun at tensense dot org</span>
+                    </a>
+                </div>
+                <div class="social-link">
+                    <span>🏛️</span>
+                    <span>Zhejiang University</span>
+                </div>
+                <div class="contact-item">
+                    <a href="https://github.com/scienceaix/deepresearch" class="social-link">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#research">Research Areas</a></li>
+                <li><a href="#publications">Key Publications</a></li>
+                <li><a href="#projects">Open Source</a></li>
+                <li><a href="#technical">Technical Stack</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="overview" class="section">
+                <h2>🎯 Research Leadership Profile</h2>
+                <div class="highlight-box">
+                    <p>An AI research scientist and physicist with 15+ years experience bridging cutting-edge machine learning research and large-scale applications, making our models be more reliable and OOD generalizable. Former <strong>Senior Director of Global Data and AI at VISA</strong> leading global AI initiatives serving 3B+ users, and currently <strong>ZJU100 Young Professor & Deputy Director at Zhejiang University</strong> in China. Led international research teams, published 30+ papers in top venues (CVPR, NeurIPS, IJCAI, Nature Communications), and secured $1.2M+ in competitive research funding. Research adopted by major AI labs and cited 1,200+ times with work reaching ESI highly cited status.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div>Top-Tier Publications</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1,200+</div>
+                        <div>Total Citations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3B</div>
+                        <div>Users Impacted at VISA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">190+</div>
+                        <div>Citations (Single Paper)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research" class="section">
+                <h2>🔬 Research Areas</h2>
+                
+                <h3>Foundation Models & Advanced ML</h3>
+                <div class="highlight-box">
+                    <p><strong>Large Language Models:</strong> Co-developed from 1B to 100B parameter foundation models with novel reasoning architectures. Research on mathematical reasoning, rule-based computation, and reliability in LLM outputs.</p>
+                    <p><strong>Model Generalization:</strong> Revolutionary optimal transport-based domain adaptation methods (CVPR 2020, 190+ citations). Solved critical transfer learning challenges enabling models to generalize across domains.</p>
+                    <p><strong>Multimodal AI:</strong> Novel MetaRuleReasoner framework and multimodal logical reasoning chains across text, image, and structured data.</p>
+                </div>
+
+                <h3>AI for Scientific Discovery</h3>
+                <div class="highlight-box">
+                    <p><strong>Materials Science:</strong> S2SNet - First AI achieving 92% accuracy in superconductor discovery. Published in IJCAI 2022 and NeurIPS 2022.</p>
+                    <p><strong>Chemistry & Biology:</strong> Comprehensive survey of scientific LLMs (ACM Computing Surveys, IF: 23.8). Retrosynthesis prediction using iterative string editing (Nature Communications).</p>
+                    <p><strong>Physics-Informed Neural Networks:</strong> E(2)-equivariant vision transformers leveraging group theory. Spatial coherence instructed swin transformer applied for universal holographic imaging.</p>
+                </div>
+
+                <h3>Production ML Systems</h3>
+                <div class="highlight-box">
+                    <p><strong>Recommendation Systems:</strong> Novel time-series recommendation addressing dynamic missing data (MNAR) challenges. Published in IEEE TKDE (CCF-A, IF: 11.6).</p>
+                    <p><strong>Enterprise Applications:</strong> Full lifecycle user behavior modeling for e-commerce (KDD 2023, CCF-A). Scalable systems serving millions of users.</p>
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <h2>📚 Key Publications</h2>
+                
+                <div class="research-item">
+                    <div class="research-title">Reliable Weighted Optimal Transport for Unsupervised Domain Adaptation</div>
+                    <div class="research-venue">CVPR 2020 (CCF-A) | 190+ Citations | World AI Conference Outstanding Youth Paper Award</div>
+                    <div class="research-desc">Revolutionary method solving model transfer challenges using optimal transport theory. Collaboration with Stanford University and Microsoft Research. </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Joint Partial Optimal Transport for Open Set Domain Adaptation</div>
+                    <div class="research-venue">IJCAI 2020 (CCF-A) | 50+ Citations </div>
+                    <div class="research-desc">The first optimal transport method for open set domain adaptation. Collaboration with Stanford University and Microsoft Research. </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Personalized Federated Learning with Adaptive Batchnorm for Healthcare</div>
+                    <div class="research-venue">IEEE Transactions on Big Data | ESI Highly Cited </div>
+                    <div class="research-desc">A personalized federated learning method that handles non-IID healthcare data. Collaboration with Microsoft Research. </div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">S2SNet: A Pretrained Neural Network for Superconductivity Discovery</div>
+                    <div class="research-venue">IJCAI 2022 (CCF-A)</div>
+                    <div class="research-desc">First AI model achieving 92% accuracy in superconductor prediction. Breakthrough application of deep learning to materials discovery.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Retrosynthesis Prediction with an Iterative String Editing Model</div>
+                    <div class="research-venue">Nature Communications 2024 (IF: 15.7)</div>
+                    <div class="research-desc">Novel approach to chemical synthesis planning using iterative string editing. Interdisciplinary collaboration advancing computational chemistry.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Scientific Large Language Models: A Survey on Biological & Chemical Domains</div>
+                    <div class="research-venue">ACM Computing Surveys 2025 (IF: 23.8)</div>
+                    <div class="research-desc">Comprehensive survey of AI for scientific discovery, covering foundation models in biology, chemistry, and materials science.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">Do Large Language Models Truly Grasp Addition? A Rule-Focused Diagnostic Using Two-Integer Arithmetic</div>
+                    <div class="research-venue">EMNLP 2025</div>
+                    <div class="research-desc">Revealing current LLMs though succeed in numeric accuracy yet fail core arithmetic computation (like commutativity, symbolic invariance, and scaling). Collaboration with Westlake University.</div>
+                </div>
+
+                <div class="research-item">
+                    <div class="research-title">MetaRuleReasoner: Beyond Chain-of-Thought Reasoning</div>
+                    <div class="research-venue">Submitted to ICLR 2026</div>
+                    <div class="research-desc">Neural rule-based reasoning framework achieving 100% accuracy for reliable mathematical computation. Addresses fundamental limitations in LLM reasoning.</div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Full Publication List:</strong> 30+ papers in CVPR, NeurIPS, IJCAI, KDD, EMNLP, ACL, UAI, Nature Communications, ACM Computing Surveys, IEEE TKDE, and other premier venues. Total citations: 1,200+ with work reaching ESI highly cited status.</p>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>💻 Open Source & Code Repositories</h2>
+                
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="https://github.com/scienceaix/deepresearch">
+                        <span class="repo-name">🌟 deepresearch</span>
+                        </a>
+                    </div>
+                    <p style="color: #8b949e;">Comprehensive survey of deep research systems, methodologies, and applications. Followed by researchers at Google DeepMind, leading universities, and major tech companies.</p>
+                    <div class="repo-stats">
+                        <span>⭐ 300+ stars</span>
+                        <span>🔄 Actively maintained</span>
+                        <span>📖 arXiv:2506.12594</span>
+                    </div>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="https://github.com/supercond/S2SNet">
+                        <span class="repo-name">s2snet-superconductor</span>
+                        </a>
+                    </div>
+                    <p style="color: #8b949e;">Pre-trained neural network for superconductivity discovery achieving 92% accuracy. IJCAI 2022 research implementation.</p>
+                    <div class="repo-stats">
+                        <span>📄 IJCAI 2022</span>
+                        <span>⚛️ Materials Science</span>
+                        <span>🎯 92% Accuracy</span>
+                    </div>
+                </div>
+
+                <div class="repo-card">
+                    <div class="repo-header">
+                        <a href="https://github.com/scienceaix/MetaRuleReasoner">
+                        <span class="repo-name">metarule-reasoner</span>
+                        </a>
+                    </div>
+                    <p style="color: #8b949e;">Neural rule-based reasoning for reliable mathematical computation. Beyond chain-of-thought approaches with 100% accuracy guarantee.</p>
+                    <div class="repo-stats">
+                        <span>🧮 Math Reasoning</span>
+                        <span>✅ 100% Accuracy</span>
+                        <span>🔬 Under Review</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="technical" class="section">
+                <h2>🛠️ Technical Expertise</h2>
+                
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h4>Foundation Models</h4>
+                        <div class="tech-tag">Transformers</div>
+                        <div class="tech-tag">LLMs</div>
+                        <div class="tech-tag">Multimodal AI</div>
+                        <div class="tech-tag">RLHF</div>
+                        <div class="tech-tag">RL Agents</div>
+                        <div class="tech-tag">RAG</div>
+                        <div class="tech-tag">Prompt Engineering</div>
+                        <div class="tech-tag">Knowledge Distillation</div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Advanced ML</h4>
+                        <div class="tech-tag">Optimal Transport</div>
+                        <div class="tech-tag">Domain Adaptation</div>
+                        <div class="tech-tag">Few-Shot Learning</div>
+                        <div class="tech-tag">Meta-Learning</div>
+                        <div class="tech-tag">Graph Neural Networks</div>
+                        <div class="tech-tag">Knowledge Graph</div>
+                        <div class="tech-tag">Self-Supervised</div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Scientific Computing</h4>
+                        <div class="tech-tag">Physics-Informed NNs</div>
+                        <div class="tech-tag">Molecular Modeling</div>
+                        <div class="tech-tag">Materials Discovery</div>
+                        <div class="tech-tag">Equation Learning</div>
+                        <div class="tech-tag">Symbolic Regression</div>
+                        <div class="tech-tag">Scientific Workflows</div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4>Infrastructure</h4>
+                        <div class="tech-tag">PyTorch</div>
+                        <div class="tech-tag">TensorFlow</div>
+                        <div class="tech-tag">Distributed Training</div>
+                        <div class="tech-tag">CUDA/GPU</div>
+                        <div class="tech-tag">MLOps</div>
+                        <div class="tech-tag">Cloud Platforms</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>🤝 Research Collaborations</h2>
+                <div class="highlight-box">
+                    <p>Open to collaborative research advancing foundation models, scientific AI, and systems bridging theoretical innovation with real-world impact. Interested in partnerships with research organizations, universities, and companies working on frontier AI challenges.</p>
+                    
+                    <div style="margin-top: 1.5rem; color: #c9d1d9;">
+                        <p><strong>Research Interests:</strong></p>
+                        <p>• Foundation model architectures and efficient training</p>
+                        <p>• AI for autonomous scientific discovery</p>
+                        <p>• Model generalization and transfer learning</p>
+                        <p>• Production ML systems at scale</p>
+                        <p>• Academic-industry research partnerships</p>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; color: #c9d1d9;">
+                        <p><strong>Get in touch:</strong> Contact via Email or GitHub for research discussions and partnership opportunities.</p>
+                    </div>
+                    <div style="margin-top: 1.5rem; color: #c9d1d9;">
+                        <strong>📧 Email:</strong> renjun at tensense dot org<br>
+                        <strong>🏛️ Institution:</strong> Zhejiang University<br>
+                        <strong>🐙 GitHub:</strong> https://github.com/scienceaix/deepresearch<br>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>© 2025 Renjun Xu | Advancing Foundation Models & Scientific AI</p>
+            <p>Building bridges between cutting-edge research and transformative applications</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
